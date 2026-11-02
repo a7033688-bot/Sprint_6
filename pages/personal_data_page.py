@@ -2,6 +2,7 @@ import time
 from locators.personal_data_page_locators import Placeholdor
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
 
 
 
@@ -15,9 +16,12 @@ class PersonalDataPage():
         self.driver.find_element(*self.locators.name).send_keys(names)
         self.driver.find_element(*self.locators.surname).send_keys(surnames)
         self.driver.find_element(*self.locators.addres).send_keys(house)
-        self.wait.until(EC.element_to_be_clickable(self.locators.metro)).send_keys(value)
-        time.sleep(2)
-        self.wait.until(EC.element_to_be_clickable(self.locators.metro_list)).click()
+        element = self.driver.find_element(*self.locators.metro)
+        element.click()
+        element.send_keys(value[:4])
+        self.wait.until(EC.presence_of_element_located((self.locators.one_metro)))
+        station =(By.XPATH, self.locators.metro_list.format(value=value))
+        self.wait.until(EC.visibility_of_element_located(station)).click()
         self.wait.until(EC.element_to_be_clickable(self.locators.number)).send_keys(numbers)
 
     def click_next_button(self):
@@ -43,7 +47,7 @@ class PersonalDataPage():
         self.driver.find_element(*self.locators.positive_confirmation_button).click()
 
     def status_button(self):
-        time.sleep(2)
+        time.sleep(1)
         self.wait.until(EC.element_to_be_clickable(self.locators.status_button)).click()
 
     def order(self):

@@ -5,7 +5,8 @@ class Placeholdor():
     surname = [By.CSS_SELECTOR,'[placeholder="* Фамилия"]']
     addres = [By.CSS_SELECTOR,'[placeholder="* Адрес: куда привезти заказ"]']
     metro = [By.CSS_SELECTOR,'[placeholder="* Станция метро"]']
-    metro_list = [By.CLASS_NAME, 'select-search__select']
+    metro_list = '//li[@role="menuitem"]//div[contains(text(), "{value}")]'
+    one_metro = (By.CSS_SELECTOR, 'ul.select-search__options li')
     number = [By.CSS_SELECTOR,'[placeholder="* Телефон: на него позвонит курьер"]']
     next_button = (By.XPATH, "./html/body/div/div/div/div/button[normalize-space()='Далее']")
     when_bring = [By.CSS_SELECTOR,'[placeholder="* Когда привезти самокат"]']
