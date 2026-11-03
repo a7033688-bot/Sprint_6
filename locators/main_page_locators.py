@@ -2,23 +2,23 @@ from selenium.webdriver.common.by import By
 
 class Main():
 
-    order_button_in_header = (By.XPATH,".//button[@class='Button_Button__ra12g']")
+    order_button_in_header = [By.XPATH,".//div[@class='Header_Nav__AGCXC']//button[normalize-space()='Заказать']"]
     cookie_button =(By.XPATH,".//button[@id='rcc-confirm-button']")
-    bottom_order_button = [By.XPATH,".//button[contains(@class,'1CSJM') and normalize-space()='Заказать']"]
+    bottom_order_button = [By.XPATH,".//div[@class='Home_FinishButton__1_cWm']//button"]
     questions_about_important = [By.XPATH,".//div[@class='accordion']"]
-    first_question = (By.XPATH,".//div[@id='accordion__heading-0']")
-    first_answer = (By.XPATH,".//div[@id='accordion__panel-0']//p")
-    second_question = (By.XPATH,".//div[@id='accordion__heading-1']")
-    second_answer = (By.XPATH,".//div[@id='accordion__panel-1']//p")
-    third_question = (By.XPATH,".//div[@id='accordion__heading-2']")
-    third_answer = (By.XPATH,".//div[@id='accordion__panel-2']//p")
-    fourth_question = (By.XPATH,".//div[@id='accordion__heading-3']")
-    fourth_answer = (By.XPATH,".//div[@id='accordion__panel-3']//p")
-    fifth_question = (By.XPATH,".//div[@id='accordion__heading-4']")
-    fifth_answer = (By.XPATH,".//div[@id='accordion__panel-4']//p")
-    sixth_question =(By.XPATH,".//div[@id='accordion__heading-5']")
-    sixth_answer = (By.XPATH,".//div[@id='accordion__panel-5']//p")
-    seven_question = (By.XPATH,".//div[@id='accordion__heading-6']")
-    seven_answer = (By.XPATH,".//div[@id='accordion__panel-6']//p")
-    eighth_question = (By.XPATH,".//div[@id='accordion__heading-7']")
-    eighth_answer = (By.XPATH,".//div[@id='accordion__panel-7']//p")
+    first_question = (By.XPATH,".//div[normalize-space()='Сколько это стоит? И как оплатить?']")
+    first_answer = (By.XPATH,".//div[normalize-space()='Сколько это стоит? И как оплатить?']/parent::div/following-sibling::div/p")
+    second_question = (By.XPATH, ".//div[starts-with(text(),'Хочу сразу несколько самокатов!')]")
+    second_answer = (By.XPATH,".//div[starts-with(text(),'Хочу сразу несколько самокатов!')]/parent::div/following-sibling::div/p")
+    third_question = (By.XPATH, ".//div[starts-with(text(),'Как рассчитывается')]")
+    third_answer = (By.XPATH,".//div[starts-with(text(),'Как рассчитывается')]/parent::div/following-sibling::div/p")
+    fourth_question = (By.XPATH, ".//div[starts-with(text(),'Можно ли заказать')]")
+    fourth_answer = (By.XPATH,".//div[starts-with(text(),'Можно ли заказать')]/parent::div/following-sibling::div/p")
+    fifth_question = (By.XPATH, ".//div[starts-with(text(),'Можно ли продлить заказ')]")
+    fifth_answer = (By.XPATH,".//div[starts-with(text(),'Можно ли продлить заказ')]/parent::div/following-sibling::div/p")
+    sixth_question =(By.XPATH, ".//div[starts-with(text(),'Вы привозите зарядку')]")
+    sixth_answer = (By.XPATH,".//div[starts-with(text(),'Вы привозите зарядку')]/parent::div/following-sibling::div/p")
+    seven_question = (By.XPATH, ".//div[starts-with(text(),'Можно ли отменить')]")
+    seven_answer = (By.XPATH,".//div[starts-with(text(),'Можно ли отменить')]/parent::div/following-sibling::div/p")
+    eighth_question = (By.XPATH, ".//div[starts-with(text(),'Я жизу за МКАДом')]")
+    eighth_answer = (By.XPATH,".//div[starts-with(text(),'Я жизу за МКАДом')]/parent::div/following-sibling::div/p")

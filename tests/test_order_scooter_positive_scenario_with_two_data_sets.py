@@ -1,6 +1,9 @@
+import allure
 import pytest
 from pages.main_page import MainPage
 from pages.personal_data_page import PersonalDataPage
+
+
 
 @pytest.mark.usefixtures("driver")
 class TestCheckEntryPointsIntoScript:
@@ -8,6 +11,8 @@ class TestCheckEntryPointsIntoScript:
     @pytest.mark.parametrize('names, surnames, house, numbers, value', 
                             [['Андрей', 'Иванов', 'улица Ленина', '89999999999', 'Лубянка'], 
                              ['Алена', 'Петрова', 'улица Пушкина', '87777777777', 'Спортивная']])
+    
+    @allure.title('проверка всего флоу позитивного сценария с двумя наборами данных')
     def test_order_scooter(self,driver,names,surnames,house,numbers,value):
         main_page = MainPage(driver)
         data_page = PersonalDataPage(driver)
@@ -19,6 +24,7 @@ class TestCheckEntryPointsIntoScript:
         data_page.order()
         assert data_page.check_url_track() == True
 
+    @allure.title('Проверка второй кнопки входа в сценарий')
     def test_mark_second_entry_point_in_scenario(self,driver):
         main_page = MainPage(driver)
         data_page = PersonalDataPage(driver)

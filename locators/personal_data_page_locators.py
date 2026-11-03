@@ -8,16 +8,16 @@ class Placeholdor():
     metro_list = '//li[@role="menuitem"]//div[contains(text(), "{value}")]'
     one_metro = (By.CSS_SELECTOR, 'ul.select-search__options li')
     number = [By.CSS_SELECTOR,'[placeholder="* Телефон: на него позвонит курьер"]']
-    next_button = (By.XPATH, "./html/body/div/div/div/div/button[normalize-space()='Далее']")
+    next_button = [By.XPATH,".//div[@class='Order_NextButton__1_rCA']//button[normalize-space()='Далее']"]
     when_bring = [By.CSS_SELECTOR,'[placeholder="* Когда привезти самокат"]']
     today_date = [By.XPATH,".//div[contains(@class,'today')]"]
     rental_period = [By.CLASS_NAME,'Dropdown-placeholder']
     one_day = [By.XPATH,".//div[text()='сутки']"]
     black_scooter = [By.ID,'black']
     gray_scooter = [By.ID,'grey']
-    order_button = [By.XPATH,".//button[contains(@class,'1CSJM') and normalize-space()='Заказать']"]
-    positive_confirmation_button = [By.XPATH,".//button[contains(@class,'Button_Middle__1CSJM') and normalize-space()='Да']"]
-    status_button = [By.XPATH,".//button[contains(@class,'1CSJM') and normalize-space()='Посмотреть статус']"]
+    order_button = [By.XPATH,".//div[@class='Order_Buttons__1xGrp']//button[text()='Заказать']"]
+    positive_confirmation_button = [By.XPATH,".//div[@class='Order_Buttons__1xGrp']//button[normalize-space()='Да']"]
+    status_button = [By.XPATH,".//div[@class='Order_NextButton__1_rCA']//button[normalize-space()='Посмотреть статус']"]
     positive_confirmation =[By.CSS_SELECTOR,'.Order_Text__2broi']
     logo_yandex = [By.XPATH,".//img[@alt='Yandex']"]
     logo_scooter = [By.XPATH,".//img[@alt='Scooter']"]
